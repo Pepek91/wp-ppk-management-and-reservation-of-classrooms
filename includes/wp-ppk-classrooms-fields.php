@@ -44,7 +44,7 @@ function ppk_save_classroom_metabox($post_id) {
     $is_revision = wp_is_post_revision($post_id);
     $is_valid_nonce = (isset($_POST['wp_ppk_classrooms_nonce']) && wp_verify_nonce($_POST['wp_ppk_classrooms_nonce'], basename(__FILE__))) ;
     
-    if($is_autosave || $is_revision || $is_valid_nonce)
+    if($is_autosave || $is_revision || !$is_valid_nonce)
     {
         return;
     }
