@@ -1,5 +1,4 @@
-<?php
-?>
+<?php ?>
 <script type="text/javascript">
 
     function ppk_search_for_reservation() {
@@ -51,6 +50,10 @@
                 }
             });
         });
+        jQuery("#search_reservation").submit(function (event) {
+            event.preventDefault();
+            ppk_search_for_reservation();
+        });
     });
 
 </script>
@@ -59,7 +62,7 @@
         <div id="icon-options-general" class="icon32"></div>
         <div style="width:70%;float:left;"><h2>Classrooms Reservations</h2></div>
         <div style="width:29%;float:left;margin-top:15px;">
-            <form id="frmsearchb" method="post" action="">
+            <form id="search_reservation" method="post" action="">
                 <input type="text" name="txt_search_reservation" id="txt_search_reservation" value="" style="width:250px;height:40px;" />
                 <input type="button" id="btn_search_reservations" name="btn_search_reservations" value="Search Reservation" />
             </form>
